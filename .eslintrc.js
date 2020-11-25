@@ -26,6 +26,7 @@ module.exports = {
     "no-plusplus": "off",
     "no-restricted-syntax": "off",
     "react/destructuring-assignment": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-unused-vars": "off"
   },
 };

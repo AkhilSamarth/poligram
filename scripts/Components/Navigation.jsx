@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import LoginPage from './LoginPage'
+import LoginPage from './LoginPage';
 import './styles/home.css';
 
 const Navigation = ({ user }) => {
-  
   const [isAuth, setIsAuth] = useState(false);
 
   function Authenticated() {
@@ -22,7 +21,7 @@ const Navigation = ({ user }) => {
             </p>
           </div>
         </>
-      )
+      );
     }
     return (
       <>
@@ -38,10 +37,10 @@ const Navigation = ({ user }) => {
       </>
     );
   }
-  return(
+  return (
     <div>
       {Authenticated()}
     </div>
-  )
+  );
 };
 export default Navigation;

@@ -8,7 +8,6 @@ import Quiz from './Components/Quiz/Quiz';
 import News from './Components/News';
 
 const Content = () => {
-  
   const [user, setUser] = useState('');
 
   useEffect(() => {
