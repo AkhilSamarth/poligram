@@ -242,6 +242,16 @@
             "senators": 2,
             "house": 4,
             "website": "https://www.ms.gov/home"
-        }
+        },
+        {
+            "stateName": "Missouri",
+            "stateCode": "MO",
+            "population": 6155246,
+            "electoralVotes": 10,
+            "senators": 2,
+            "house": 8,
+            "website": "https://www.mo.gov/"
+        },
+        
     ]
 }
