@@ -21,6 +21,19 @@ function News() {
       Socket.off('trendNews');
     };
   }, []);
+  
+  useEffect(() => {
+    Socket.emit('trend news api call');
+
+    Socket.on('trendNews', (data) => {
+      setTrendNews(data.TrendnewsLst);
+    });
+
+    return () => {
+     
+      Socket.off('trendNews');
+    };
+  }, []);
 
   console.log(trendNews);
 
