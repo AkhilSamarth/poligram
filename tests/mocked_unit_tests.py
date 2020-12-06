@@ -52,6 +52,21 @@ class MockedTest(unittest.TestCase):
         self.assertEqual(r_json["articles"][0]["source"]["id"], 'None')
         self.assertEqual(r_json["articles"][0]["source"]["name"], 'New York Times')
         f.close()
+        
+    @patch("app.trending_news")
+    def test_trend_news(self, mock_api_call):
+        """News api Mocked unit test"""
+        f = open("tests/NEWSDATA.json", "r")
+        mock_api_call.return_value.status_code = 200
+        mock_api_call.return_value = f.read()
+
+        r_json = json.loads(app.trending_news())
+
+        self.assertEqual(r_json["status"], 'okkk')
+        self.assertEqual(r_json["articles"][0]["author"], 'Lisa Lerer')
+        self.assertEqual(r_json["articles"][0]["source"]["id"], 'None')
+        self.assertEqual(r_json["articles"][0]["source"]["name"], 'New York Times')
+        f.close()
 
     @patch("app.send_message")
     def test_dictionary_failure(self, mocked_get):
