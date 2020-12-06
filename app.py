@@ -206,9 +206,13 @@ def news_api_call():
     socketio.emit('newsData', {
         'newsObjectLst': newsObjectLst
     })
-
+    
+    return newsObjectLst
+    
+@socketio.on('trend news api call')
+def trend_news_api_call():
     news_Trend = trending_news()
-
+    global TrendnewsLst
     TrendnewsLst = []
     for newz in news_Trend:
         if newz["content"] == None:
@@ -232,7 +236,7 @@ def news_api_call():
         'TrendnewsLst': TrendnewsLst
     })
 
-    return newsObjectLst
+    return TrendnewsLst
 
 
 @socketio.on('state')
